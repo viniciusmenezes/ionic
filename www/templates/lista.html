@@ -1,0 +1,16 @@
+<ion-view view-title="Lista">
+
+    <ion-nav-buttons side="secondary">
+      <a href="#/new" class="button button-icon ion-plus"></a>
+    </ion-nav-buttons>
+    
+    <ion-content ng-controller="ListaCtrl">        
+        <ion-list>
+            <ion-item ng-repeat="t in tarefas" on-hold="hold(t.id)" ng-click="editar(t.id)" ng-hide="t.concluida">
+                {{t.texto}}
+                <ion-option-button class="button-positive icon-left ion-checkmark-round" ng-click="concluir(t.id, t)">Concluir</ion-option-button>
+            </ion-item>
+        </ion-list>
+    </ion-content>   
+    
+</ion-view>
